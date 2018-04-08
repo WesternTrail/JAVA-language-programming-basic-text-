@@ -15,37 +15,33 @@ public class HexToDi{
 		char ch = Character.toUpperCase(hexString.charAt(0));
 		
 		if(ch <= 'F'&&ch >= 'A'){
-			int value = ch - 'A' + 10;
+			int decimal = ch - 'A' + 10;
 			
-			int i;//存放余数
-			int sum = 0;	//存放和 
-			int k = 1;	//位数 
+			String binary = "";
 			
-			while(value != 0)
+			while(decimal != 0)
 			{
-				i = value % 2;
-				value /= 2;
-				sum = sum + i*k;
-				k *= 10;
+				int binaryValue = decimal % 2;
+				binary = binaryValue + binary;
+				decimal /= 2;
 			}
-			System.out.print("The binary value is "+sum);
+
+			System.out.print("The binary value is "+binary);
 		}
 		
 		else if(Character.isDigit(ch)){
-			int value = ch - '0';
+			int decimal = ch - 'A' + 10;
 			
-			int i;//存放余数
-			int sum = 0;	//存放和 
-			int k = 1;	//位数
+			String binary = "";
 			
-			while(value!=0)
+			while(decimal != 0)
 			{
-				i = value%2;
-				value /= 2;
-				sum = sum + i*k;
-				k *= 10;
+				int binaryValue = decimal % 2;
+				binary = binaryValue + binary;
+				decimal /= 2;
 			}
-			System.out.print("The binary value is "+sum);
+
+			System.out.print("The binary value is "+binary);
 		}
 		
 		else
